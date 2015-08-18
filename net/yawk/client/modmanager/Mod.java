@@ -1,24 +1,24 @@
 package net.yawk.client.modmanager;
 
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 
 import org.lwjgl.input.Keyboard;
 
-public class Mod implements Toggleable{
+public class Mod implements IToggleable{
 	
 	protected int keybind;
 	protected boolean enabled;
 	protected Type type;
 	protected String name;
 	protected String description;
-	private Value[] options;
+	private AbstractValue[] options;
 	
 	public Mod() {
 		super();
 		this.keybind = -1;
 	}
 	
-	public Mod(Value[] options) {
+	public Mod(AbstractValue[] options) {
 		super();
 		this.options = options;
 		this.keybind = -1;
@@ -28,11 +28,11 @@ public class Mod implements Toggleable{
 		return options != null;
 	}
 	
-	public Value[] getOptions() {
+	public AbstractValue[] getOptions() {
 		return options;
 	}
 
-	public void setOptions(Value[] options) {
+	public void setOptions(AbstractValue[] options) {
 		this.options = options;
 	}
 	

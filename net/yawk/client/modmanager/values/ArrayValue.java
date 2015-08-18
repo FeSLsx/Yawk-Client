@@ -1,11 +1,11 @@
 package net.yawk.client.modmanager.values;
 
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.components.ArrayBox;
 import net.yawk.client.gui.components.ArrayValueBox;
 
-public class ArrayValue extends Value<Integer>{
+public class ArrayValue extends AbstractValue<Integer>{
 
 	private String[] modes;
 	
@@ -15,7 +15,7 @@ public class ArrayValue extends Value<Integer>{
 	}
 
 	@Override
-	public Component getComponent(IPanel panel) {
+	public AbstractComponent getComponent(IPanel panel) {
 		return new ArrayValueBox(panel, this);
 	}
 

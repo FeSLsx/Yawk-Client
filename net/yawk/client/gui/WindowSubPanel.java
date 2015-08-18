@@ -8,19 +8,19 @@ import net.yawk.client.utils.GuiUtils;
 
 public class WindowSubPanel implements IPanel{
 
-	private List<Component> components;
+	private List<AbstractComponent> components;
 	private Window win;
 	
 	public WindowSubPanel(Window win){
 		this.win = win;
-		components = new ArrayList<Component>();
+		components = new ArrayList<AbstractComponent>();
 	}
 	
 	public void draw(int x, int y, int posX, int posY){
 		
 		int h = 0;
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			h += c.getHeight();
 		}
 		
@@ -28,13 +28,13 @@ public class WindowSubPanel implements IPanel{
 		
 		h = 0;
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			c.draw(x, y, posX+2, posY+h);
 			h += c.getHeight();
 		}
 	}
 	
-	public void addComponent(Component comp){
+	public void addComponent(AbstractComponent comp){
 		components.add(comp);
 	}
 	
@@ -42,7 +42,7 @@ public class WindowSubPanel implements IPanel{
 		
 		int h = 0;
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			c.mouseClicked(x, y, posX+2, posY+h);
 			h += c.getHeight();
 		}
@@ -58,7 +58,7 @@ public class WindowSubPanel implements IPanel{
 		
 		int h = 0;
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			h += c.getHeight();
 		}
 		
@@ -67,7 +67,7 @@ public class WindowSubPanel implements IPanel{
 
 	public void mouseReleased(int mouseX, int mouseY, int state) {
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			c.mouseReleased(mouseX, mouseY, state);
 		}
 	}

@@ -2,7 +2,7 @@ package net.yawk.client.gui.components.buttons;
 
 import net.yawk.client.Client;
 import net.yawk.client.gui.ColourType;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.GuiClickable;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.Window;
@@ -11,7 +11,7 @@ import net.yawk.client.utils.GuiUtils;
 
 import org.lwjgl.opengl.GL11;
 
-public abstract class Button extends Component{
+public abstract class Button extends AbstractComponent{
 	
 	protected IPanel win;
 	

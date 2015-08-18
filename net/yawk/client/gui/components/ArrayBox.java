@@ -2,12 +2,12 @@ package net.yawk.client.gui.components;
 
 import net.yawk.client.Client;
 import net.yawk.client.gui.ColourType;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.Window;
 
 //TODO: Maybe merge this with the NumberSelector
-public class ArrayBox<T> extends Component{
+public class ArrayBox<T> extends AbstractComponent{
 	
 	private T[] options;
 	private int index;

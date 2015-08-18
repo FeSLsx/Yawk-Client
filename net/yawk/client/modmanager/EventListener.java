@@ -2,7 +2,7 @@ package net.yawk.client.modmanager;
 
 import com.darkmagician6.eventapi.EventManager;
 
-public class EventListener implements Toggleable{
+public class EventListener implements IToggleable{
 	
 	public EventListener(){
 		

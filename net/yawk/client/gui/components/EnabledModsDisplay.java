@@ -2,11 +2,11 @@ package net.yawk.client.gui.components;
 
 import net.yawk.client.Client;
 import net.yawk.client.gui.ColourType;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.Window;
 import net.yawk.client.modmanager.Mod;
 
-public class EnabledModsDisplay extends Component {
+public class EnabledModsDisplay extends AbstractComponent {
 	
 	private int height;
 	protected Window win;

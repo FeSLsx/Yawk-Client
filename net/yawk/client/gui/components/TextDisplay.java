@@ -1,9 +1,9 @@
 package net.yawk.client.gui.components;
 
 import net.yawk.client.Client;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 
-public class TextDisplay extends Component{
+public class TextDisplay extends AbstractComponent{
 
 	private String text;
 	

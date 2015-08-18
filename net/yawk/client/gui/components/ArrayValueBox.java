@@ -2,11 +2,11 @@ package net.yawk.client.gui.components;
 
 import net.yawk.client.Client;
 import net.yawk.client.gui.ColourType;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.modmanager.values.ArrayValue;
 
-public class ArrayValueBox extends Component{
+public class ArrayValueBox extends AbstractComponent{
 	
 	private IPanel win;
 	private ArrayValue val;

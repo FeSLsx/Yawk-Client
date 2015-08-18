@@ -2,7 +2,7 @@ package net.yawk.client.gui.hub;
 
 import net.yawk.client.Client;
 import net.yawk.client.gui.Canvas;
-import net.yawk.client.gui.ScalerPosition;
+import net.yawk.client.gui.IScalerPosition;
 import net.yawk.client.gui.components.Slider;
 import net.yawk.client.gui.components.buttons.BooleanButton;
 import net.yawk.client.gui.maps.LargeMap;
@@ -20,7 +20,7 @@ public class MapSlate extends Slate{
 	public MapSlate(final GuiHub hub, Client client) {
 		super("Map", null, hub);
 		
-		ScalerPosition pos = new ScalerPosition(){
+		IScalerPosition pos = new IScalerPosition(){
 
 			@Override
 			public int getX() {

@@ -9,7 +9,7 @@ import net.yawk.client.events.EventTick;
 import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.ClientUtils;
 import net.yawk.client.utils.CombatUtils;
 import net.yawk.client.utils.timing.MillisecondTimer;
@@ -25,7 +25,7 @@ public class Triggerbot extends Mod{
 	
 	public Triggerbot(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				delay = new SliderValue("Hit Delay", "triggerbot.hitdelay", Client.getClient().getValuesRegistry(), 120, 0, 1000, true),
 		});
 		

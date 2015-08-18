@@ -17,7 +17,7 @@ public class Window implements IPanel{
 	public String title;
 	public int posX, posY, mouseXOffset, mouseYOffset;
 	public boolean dragging, extended, pinned;
-	protected List<Component> components = new ArrayList<Component>();
+	protected List<AbstractComponent> components = new ArrayList<AbstractComponent>();
 	private ModManager modManager;
 	
 	public static int TITLE_COMPONENT_SPACE = 2;
@@ -43,7 +43,7 @@ public class Window implements IPanel{
 		
 		int h = 0;
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			
 			h += c.getHeight();
 			
@@ -81,7 +81,7 @@ public class Window implements IPanel{
 			
 			h = 0;
 			
-			for(Component c : components){
+			for(AbstractComponent c : components){
 				c.draw(x, y, posX, posY+height+TITLE_COMPONENT_SPACE+h);
 				h += c.getHeight();
 			}
@@ -120,7 +120,7 @@ public class Window implements IPanel{
 			
 			int h = 0;
 			
-			for(Component c : components){
+			for(AbstractComponent c : components){
 				c.mouseClicked(x, y, posX, posY+height+h);
 				h += c.getHeight();
 			}
@@ -132,7 +132,7 @@ public class Window implements IPanel{
 	}
 	
 	public void keyPress(char c, int key) {
-		for(Component comp : components){
+		for(AbstractComponent comp : components){
 			comp.keyPress(key, c);
 		}
 	}
@@ -162,7 +162,7 @@ public class Window implements IPanel{
 	protected void mouseReleased(int mouseX, int mouseY, int state) {
 		dragging = false;
 		if(extended){
-			for(Component c : components){
+			for(AbstractComponent c : components){
 				c.mouseReleased(mouseX, mouseY, state);
 			}
 		}
@@ -196,7 +196,7 @@ public class Window implements IPanel{
 		this.modManager = modManager;
 	}
 	
-	public void addComponent(Component c){
+	public void addComponent(AbstractComponent c){
 		this.components.add(c);
 	}
 	

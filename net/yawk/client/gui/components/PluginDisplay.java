@@ -3,9 +3,9 @@ package net.yawk.client.gui.components;
 import net.minecraft.client.gui.FontRenderer;
 import net.yawk.client.Client;
 import net.yawk.client.api.PluginData;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 
-public class PluginDisplay extends Component{
+public class PluginDisplay extends AbstractComponent{
 
 	private PluginData plugin;
 	private String message;

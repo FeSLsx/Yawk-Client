@@ -17,7 +17,7 @@ import net.yawk.client.events.EventTick;
 import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.ArrayValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.ClientUtils;
 
 import com.darkmagician6.eventapi.EventTarget;
@@ -29,7 +29,7 @@ public class Build extends Mod{
 	
 	public Build(){
 
-		super(new Value[]{
+		super(new AbstractValue[]{
 				modeValue = new ArrayValue("Mode", "build.mode", Client.getClient().getValuesRegistry(), 0, new String[]{
 					"Floor",
 					"Pole",

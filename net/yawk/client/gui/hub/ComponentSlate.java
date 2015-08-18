@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import net.yawk.client.Client;
 import net.yawk.client.gui.Canvas;
-import net.yawk.client.gui.ScalerPosition;
+import net.yawk.client.gui.IScalerPosition;
 
 public abstract class ComponentSlate extends Slate{
 
@@ -17,7 +17,7 @@ public abstract class ComponentSlate extends Slate{
 		this.client = client;
 		this.hub = hub;
 		
-		ScalerPosition pos = new ScalerPosition(){
+		IScalerPosition pos = new IScalerPosition(){
 			
 			@Override
 			public int getX() {

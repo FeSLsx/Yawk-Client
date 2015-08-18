@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 import net.minecraft.client.gui.GuiScreen;
 import net.yawk.client.Client;
 import net.yawk.client.gui.Canvas;
-import net.yawk.client.gui.ScalerPosition;
+import net.yawk.client.gui.IScalerPosition;
 import net.yawk.client.gui.components.Slider;
 import net.yawk.client.gui.components.buttons.TextButton;
 import net.yawk.client.modmanager.values.SliderValue;
@@ -49,7 +49,7 @@ public class GuiHub extends GuiScreen {
 		this.client = client;
 		this.colourModifier = new ColourModifier();
 		
-		ScalerPosition pos = new ScalerPosition(){
+		IScalerPosition pos = new IScalerPosition(){
 
 			@Override
 			public int getX() {

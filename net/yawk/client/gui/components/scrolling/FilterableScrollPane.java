@@ -3,7 +3,7 @@ package net.yawk.client.gui.components.scrolling;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.components.selectors.SelectorButton;
 

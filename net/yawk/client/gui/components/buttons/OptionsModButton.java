@@ -6,11 +6,11 @@ import java.util.List;
 import net.yawk.client.Client;
 import net.yawk.client.gui.Canvas;
 import net.yawk.client.gui.ColourType;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.Window;
 import net.yawk.client.gui.WindowSubPanel;
 import net.yawk.client.modmanager.Mod;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.GuiUtils;
 
 public class OptionsModButton extends ModButton{
@@ -23,7 +23,7 @@ public class OptionsModButton extends ModButton{
 		
 		panel = new WindowSubPanel(win);
 		
-		for(Value option : mod.getOptions()){
+		for(AbstractValue option : mod.getOptions()){
 			panel.addComponent(option.getComponent(panel));
 		}
 	}

@@ -1,14 +1,14 @@
 package net.yawk.client.gui.components;
 
 import net.yawk.client.Client;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.ClientUtils;
 import net.yawk.client.utils.GuiUtils;
 
-public class Slider extends Component{
+public class Slider extends AbstractComponent{
 	
 	private static int BAR_WIDTH = 10;
 	

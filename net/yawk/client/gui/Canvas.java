@@ -9,11 +9,11 @@ import net.yawk.client.utils.GuiUtils;
 
 public class Canvas implements IPanel{
 	
-	private ScalerPosition pos;
+	private IScalerPosition pos;
 	private int width, height;
-	protected List<Component> components = new CopyOnWriteArrayList<Component>();
+	protected List<AbstractComponent> components = new CopyOnWriteArrayList<AbstractComponent>();
 	
-	public Canvas(ScalerPosition pos, int width) {
+	public Canvas(IScalerPosition pos, int width) {
 		this.pos = pos;
 		this.width = width;
 	}
@@ -25,7 +25,7 @@ public class Canvas implements IPanel{
 		
 		int h = 0;
 		
-		for(Component comp : components){
+		for(AbstractComponent comp : components){
 			h += comp.getHeight();
 		}
 		
@@ -34,7 +34,7 @@ public class Canvas implements IPanel{
 		
 		h = 0;
 		
-		for(Component comp : components){
+		for(AbstractComponent comp : components){
 			comp.draw(x, y, posX, posY+h);
 			h += comp.getHeight();
 		}
@@ -47,7 +47,7 @@ public class Canvas implements IPanel{
 		
 		int h = 0;
 		
-		for (Component comp : components){
+		for (AbstractComponent comp : components){
 			comp.mouseClicked(x, y, posX, posY+h);
 			h += comp.getHeight();
 		}
@@ -55,7 +55,7 @@ public class Canvas implements IPanel{
 	
 	public void keyPress(char c, int key) {
 				
-		for(Component comp : components){
+		for(AbstractComponent comp : components){
 			comp.keyPress(key, c);
 		}
 	}
@@ -64,7 +64,7 @@ public class Canvas implements IPanel{
 		
 		int h = 0;
 		
-		for(Component comp : components){
+		for(AbstractComponent comp : components){
 			comp.mouseReleased(x, y, state);
 			h += comp.getHeight();
 		}
@@ -80,7 +80,7 @@ public class Canvas implements IPanel{
 		return height;
 	}
 	
-	public void addComponent(Component c){
+	public void addComponent(AbstractComponent c){
 		this.components.add(c);
 	}
 	

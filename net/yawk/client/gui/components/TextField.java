@@ -10,13 +10,13 @@ import org.lwjgl.input.Keyboard;
 
 import net.minecraft.util.ChatAllowedCharacters;
 import net.yawk.client.Client;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.Window;
 import net.yawk.client.utils.Colours;
 import net.yawk.client.utils.GuiUtils;
 
-public class TextField extends Component{
+public class TextField extends AbstractComponent{
 	
 	protected IPanel win;
 	private boolean selected;

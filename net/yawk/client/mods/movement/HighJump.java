@@ -6,7 +6,7 @@ import net.yawk.client.events.EventMoveEntity;
 import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 
 import com.darkmagician6.eventapi.EventTarget;
 import com.darkmagician6.eventapi.types.EventType;
@@ -18,7 +18,7 @@ public class HighJump extends Mod{
 	
 	public HighJump(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				height = new SliderValue("Height", "highjump.height", Client.getClient().getValuesRegistry(), 1.2, 0, 3, false),
 		});
 	}

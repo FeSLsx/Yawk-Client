@@ -5,7 +5,7 @@ import net.yawk.client.events.*;
 import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 
 import org.lwjgl.input.Keyboard;
 
@@ -18,7 +18,7 @@ public class Flight extends Mod{
 	
 	public Flight(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				speed = new SliderValue("Fly Speed", "flight.speed", Client.getClient().getValuesRegistry(), 0.5, 0, 3, false),
 		});
 	}

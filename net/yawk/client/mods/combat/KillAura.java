@@ -14,7 +14,7 @@ import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.BooleanValue;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.ClientUtils;
 import net.yawk.client.utils.CombatUtils;
 import net.yawk.client.utils.timing.MillisecondTimer;
@@ -36,7 +36,7 @@ public class KillAura extends Mod{
 	
 	public KillAura(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				delay = new SliderValue("Hit Delay", "killaura.hitdelay", Client.getClient().getValuesRegistry(), 120, 0, 2000, true),
 				range = new SliderValue("Range", "killaura.range", Client.getClient().getValuesRegistry(), 3.95, 0, 6, true),
 				silent = new BooleanValue("Silent", "killaura.silent", Client.getClient().getValuesRegistry(), false),

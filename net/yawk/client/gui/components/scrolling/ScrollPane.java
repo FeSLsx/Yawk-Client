@@ -3,7 +3,7 @@ package net.yawk.client.gui.components.scrolling;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.Window;
 import net.yawk.client.utils.GuiUtils;
@@ -11,9 +11,9 @@ import net.yawk.client.utils.Scissor;
 
 import org.lwjgl.opengl.GL11;
 
-public class ScrollPane extends Component implements IPanel{
+public class ScrollPane extends AbstractComponent implements IPanel{
 	
-	protected List<Component> components = new ArrayList<Component>();
+	protected List<AbstractComponent> components = new ArrayList<AbstractComponent>();
 	protected int height, dragged, mouseYOffset, BAR_HEIGHT = 12, BAR_WIDTH = 4;
 	private boolean dragging;
 	protected IPanel win;
@@ -53,12 +53,12 @@ public class ScrollPane extends Component implements IPanel{
 		int h = 0;
 		
 		if(isWithinScrollPane(x, y, cx, cy)){
-			for(Component c : components){
+			for(AbstractComponent c : components){
 				c.draw(x, y + drag, cx, cy+h);
 				h += c.getHeight();
 			}
 		}else{
-			for(Component c : components){
+			for(AbstractComponent c : components){
 				c.draw(-999, -999, cx, cy+h);
 				h += c.getHeight();
 			}
@@ -77,7 +77,7 @@ public class ScrollPane extends Component implements IPanel{
 		
 		int h = 0;
 		
-		for(Component c : components){
+		for(AbstractComponent c : components){
 			h += c.getHeight();
 		}
 		
@@ -108,12 +108,12 @@ public class ScrollPane extends Component implements IPanel{
 			int drag = getScrollHeight();
 			
 			if(isWithinScrollPane(x, y, cx, cy)){
-				for(Component c : components){
+				for(AbstractComponent c : components){
 					c.mouseClicked(x, y + drag, cx, cy+h);
 					h += c.getHeight();
 				}
 			}else{
-				for(Component c : components){
+				for(AbstractComponent c : components){
 					c.mouseClicked(-999, -999, cx, cy+h);
 					h += c.getHeight();
 				}
@@ -123,7 +123,7 @@ public class ScrollPane extends Component implements IPanel{
 	
 	@Override
 	public void keyPress(int key, char c) {
-		for(Component comp : components){
+		for(AbstractComponent comp : components){
 			comp.keyPress(key, c);
 		}
 	}
@@ -143,7 +143,7 @@ public class ScrollPane extends Component implements IPanel{
 		return win.getWidth() - BAR_WIDTH - 1;
 	}
 	
-	public void addComponent(Component c){
+	public void addComponent(AbstractComponent c){
 		this.components.add(c);
 	}
 }

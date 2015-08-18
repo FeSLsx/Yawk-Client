@@ -1,6 +1,6 @@
 package net.yawk.client.gui;
 
-public abstract class Component {
+public abstract class AbstractComponent {
 
 	public void draw(int x, int y, int cx, int cy){
 		

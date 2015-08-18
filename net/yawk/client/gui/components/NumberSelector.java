@@ -3,11 +3,11 @@ package net.yawk.client.gui.components;
 import net.minecraft.util.EnumChatFormatting;
 import net.yawk.client.Client;
 import net.yawk.client.gui.ColourType;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.Window;
 import net.yawk.client.utils.Colours;
 
-public class NumberSelector extends Component{
+public class NumberSelector extends AbstractComponent{
 	
 	protected Window win;
 	private int number;

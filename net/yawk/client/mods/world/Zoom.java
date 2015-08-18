@@ -6,7 +6,7 @@ import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.ArrayValue;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 
 import com.darkmagician6.eventapi.EventTarget;
 
@@ -19,7 +19,7 @@ public class Zoom extends Mod{
 	
 	public Zoom(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				fov = new SliderValue("FOV", "zoom.fov", Client.getClient().getValuesRegistry(), 20, 10, 50, true),
 				modeval = new ArrayValue("Mode", "zoom.mode", Client.getClient().getValuesRegistry(), 0, new String[]{"Normal", "Smooth"}),
 		});

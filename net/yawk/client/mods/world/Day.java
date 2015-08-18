@@ -17,7 +17,7 @@ import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.ArrayValue;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.ClientUtils;
 
 import com.darkmagician6.eventapi.EventTarget;
@@ -29,7 +29,7 @@ public class Day extends Mod{
 	
 	public Day(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				time = new SliderValue("World time", "day.time", Client.getClient().getValuesRegistry(), 1000, 0, 23000, false),
 		});
 	}

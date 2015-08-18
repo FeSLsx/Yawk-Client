@@ -1,6 +1,6 @@
 package net.yawk.client.modmanager;
 
-public interface Toggleable {
+public interface IToggleable {
 	
 	public boolean isEnabled();
 	

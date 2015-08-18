@@ -1,16 +1,16 @@
 package net.yawk.client.modmanager.values;
 
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.IPanel;
 
-public abstract class Value<T> {
+public abstract class AbstractValue<T> {
 	
 	protected T value;
 	private String name;
 	private ValuesRegistry registry;
 	private String saveName;
 	
-	public Value(String name, String saveName, ValuesRegistry registry, T defaultValue){
+	public AbstractValue(String name, String saveName, ValuesRegistry registry, T defaultValue){
 		
 		if(registry.hasValue(saveName)){
 			this.value = (T) registry.get(saveName);
@@ -50,5 +50,5 @@ public abstract class Value<T> {
 		registry.set(saveName, value);
 	}
 	
-	public abstract Component getComponent(IPanel panel);
+	public abstract AbstractComponent getComponent(IPanel panel);
 }

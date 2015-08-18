@@ -2,13 +2,13 @@ package net.yawk.client.gui.components;
 
 import net.yawk.client.Client;
 import net.yawk.client.cameras.Camera;
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 import net.yawk.client.gui.GuiClickable;
 import net.yawk.client.gui.IPanel;
 import net.yawk.client.gui.Window;
 import net.yawk.client.utils.GuiUtils;
 
-public class CameraDisplay extends Component{
+public class CameraDisplay extends AbstractComponent{
 	
 	private Window window;
 	private Camera camera;

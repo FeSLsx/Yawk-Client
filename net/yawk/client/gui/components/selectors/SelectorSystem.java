@@ -2,7 +2,7 @@ package net.yawk.client.gui.components.selectors;
 
 import java.util.ArrayList;
 
-import net.yawk.client.gui.Component;
+import net.yawk.client.gui.AbstractComponent;
 
 public class SelectorSystem<T extends SelectorButton> {
 	

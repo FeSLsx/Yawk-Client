@@ -10,7 +10,7 @@ import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.ArrayValue;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 
 import com.darkmagician6.eventapi.EventTarget;
 import com.darkmagician6.eventapi.types.EventType;
@@ -23,7 +23,7 @@ public class Speed extends Mod{
 	
 	public Speed(){
 
-		super(new Value[]{
+		super(new AbstractValue[]{
 				speed = new SliderValue("Walk Speed", "speed.walkspeed", Client.getClient().getValuesRegistry(), 2, 0, 5, false),
 						modeValue = new ArrayValue("Mode", "speed.mode", Client.getClient().getValuesRegistry(), 0, new String[]{
 							"Default",

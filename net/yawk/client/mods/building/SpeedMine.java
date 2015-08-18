@@ -6,7 +6,7 @@ import net.yawk.client.modmanager.Mod;
 import net.yawk.client.modmanager.RegisterMod;
 import net.yawk.client.modmanager.values.BooleanValue;
 import net.yawk.client.modmanager.values.SliderValue;
-import net.yawk.client.modmanager.values.Value;
+import net.yawk.client.modmanager.values.AbstractValue;
 import net.yawk.client.utils.timing.MillisecondTimer;
 import net.yawk.client.utils.timing.ValueTimer;
 
@@ -20,7 +20,7 @@ public class SpeedMine extends Mod{
 	
 	public SpeedMine(){
 		
-		super(new Value[]{
+		super(new AbstractValue[]{
 				delay = new SliderValue("Delay", "speedmine.delay", Client.getClient().getValuesRegistry(), 100, 0, 100, true),
 		});
 		

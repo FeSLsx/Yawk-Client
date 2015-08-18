@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import net.yawk.client.modmanager.Mod;
-import net.yawk.client.modmanager.Toggleable;
+import net.yawk.client.modmanager.IToggleable;
 
 import com.darkmagician6.eventapi.events.Event;
 import com.darkmagician6.eventapi.events.EventStoppable;
@@ -40,7 +40,7 @@ public final class EventManager {
      * @param toggleable
      *         Toggleable that you want to register.
      */
-    public static void register(Toggleable toggleable) {
+    public static void register(IToggleable toggleable) {
         for (final Method method : toggleable.getClass().getDeclaredMethods()) {
             if (isMethodBad(method)) {
                 continue;
@@ -59,7 +59,7 @@ public final class EventManager {
      * @param Parameter
      *         class for the marked method we are looking for.
      */
-    public static void register(Toggleable toggleable, Class<? extends Event> eventClass) {
+    public static void register(IToggleable toggleable, Class<? extends Event> eventClass) {
         for (final Method method : toggleable.getClass().getDeclaredMethods()) {
             if (isMethodBad(method, eventClass)) {
                 continue;
@@ -75,7 +75,7 @@ public final class EventManager {
      * @param toggleable
      *         Toggleable of which you want to unregister all Methods.
      */
-    public static void unregister(Toggleable toggleable) {
+    public static void unregister(IToggleable toggleable) {
         for (final List<MethodData> dataList : REGISTRY_MAP.values()) {
             for (final MethodData data : dataList) {
                 if (data.getSource().equals(toggleable)) {
@@ -95,7 +95,7 @@ public final class EventManager {
      * @param Parameter
      *         class for the method to remove.
      */
-    public static void unregister(Toggleable toggleable, Class<? extends Event> eventClass) {
+    public static void unregister(IToggleable toggleable, Class<? extends Event> eventClass) {
         if (REGISTRY_MAP.containsKey(eventClass)) {
             for (final MethodData data : REGISTRY_MAP.get(eventClass)) {
                 if (data.getSource().equals(toggleable)) {
@@ -119,7 +119,7 @@ public final class EventManager {
      * @param toggleable
      *         Source object of the method.
      */
-    private static void register(Method method, Toggleable toggleable) {
+    private static void register(Method method, IToggleable toggleable) {
     	Class<? extends Event> indexClass = (Class<? extends Event>) method.getParameterTypes()[0];
     	//New MethodData from the Method we are registering.
     	final MethodData data = new MethodData(toggleable, method, method.getAnnotation(EventTarget.class).value());
@@ -303,7 +303,7 @@ public final class EventManager {
 	 */
 	private static final class MethodData {
 
-	    private final Toggleable source;
+	    private final IToggleable source;
 
 	    private final Method target;
 
@@ -321,7 +321,7 @@ public final class EventManager {
 	     *         The priority of this Method. Used by the registry to sort
 	     *         the data on.
 	     */
-	    public MethodData(Toggleable source, Method target, byte priority) {
+	    public MethodData(IToggleable source, Method target, byte priority) {
 	        this.source = source;
 	        this.target = target;
 	        this.priority = priority;
@@ -332,7 +332,7 @@ public final class EventManager {
 	     *
 	     * @return Source Toggleable of the targeted Method.
 	     */
-	    public Toggleable getSource() {
+	    public IToggleable getSource() {
 	        return source;
 	    }
 

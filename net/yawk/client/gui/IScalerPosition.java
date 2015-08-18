@@ -1,6 +1,6 @@
 package net.yawk.client.gui;
 
-public interface ScalerPosition {
+public interface IScalerPosition {
 	
 	public int getX();
 	public int getY();

@@ -37,21 +37,20 @@ public class GuiIngameHook extends GuiIngame{
 	//private Camera cam = new Camera();
 	
 	@Override
-	public void func_175180_a(float p_175180_1_){
-		
+	public void func_175180_a(float p_175180_1_){	
 		super.func_175180_a(p_175180_1_);
-		
-		if(!hideClientMod.isEnabled()){
-			Client.getClient().getFontRenderer().drawStringWithShadow("Yawk" + EnumChatFormatting.GREEN + " v2.5" + EnumChatFormatting.LIGHT_PURPLE + " ("+(Client.getClient().getSession().isPremium()? "Premium":"Beta")+")", 3, 2, 0xFFFFFFFF, true);
-		}
-		
-		if(Client.getClient().getMinecraft().currentScreen == null){
-			for(Window win : Client.getClient().gui.windows){
-				if(win.pinned){
-					win.renderWindow(0, 0, false);
-				}
+		if(!Client.getClient().getMinecraft().gameSettings.showDebugInfo) {
+			if(!hideClientMod.isEnabled()){
+				Client.getClient().getFontRenderer().drawStringWithShadow("Yawk" + EnumChatFormatting.GREEN + " v2.5" + EnumChatFormatting.LIGHT_PURPLE + " ("+(Client.getClient().getSession().isPremium()? "Premium":"Beta")+")", 3, 2, 0xFFFFFFFF, true);
 			}
+			if(Client.getClient().getMinecraft().currentScreen == null){
+				for(Window win : Client.getClient().gui.windows){
+					if(win.pinned){
+						win.renderWindow(0, 0, false);
+					}
+				}
 		}
+	}
 		
 		EventManager.call(eventGuiRender);
 		
